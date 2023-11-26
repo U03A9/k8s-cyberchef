@@ -9,5 +9,5 @@ export APPLICATION_NAME
 build:
 	docker build --tag ${DOCKER_USERNAME}/${APPLICATION_NAME} .
 
-push:
-	docker push ${DOCKER_USERNAME}/${APPLICATION_NAME}
+run:
+	docker run ${DOCKER_USERNAME}/${APPLICATION_NAME}
