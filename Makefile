@@ -10,4 +10,4 @@ build:
 	docker build --tag ${DOCKER_USERNAME}/${APPLICATION_NAME} .
 
 run:
-	docker run ${DOCKER_USERNAME}/${APPLICATION_NAME}
+	docker run -p 127.0.0.1:80:8080/tcp ${DOCKER_USERNAME}/${APPLICATION_NAME} 

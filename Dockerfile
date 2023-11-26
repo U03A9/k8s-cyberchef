@@ -23,7 +23,6 @@ RUN \
 
 FROM nginxinc/nginx-unprivileged:1.25.3-alpine-slim
 
-RUN sed -i 's|listen       8080;|listen       80;|g' /etc/nginx/conf.d/default.conf
 COPY --from=build --chown=0:0 /app/build/prod /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 8080
