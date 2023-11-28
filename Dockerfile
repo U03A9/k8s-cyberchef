@@ -1,7 +1,7 @@
 FROM --platform=$BUILDPLATFORM node:17.9.1 as build
 
 ARG CYBERCHEF_VERSION="v10.5.2" # set to desired release tag
-ARG BUILD_TYPE="git" # use 'release' or 'git' to build from source
+ARG BUILD_TYPE="release" # use 'release' or 'git' to build from source
 
 USER node
 WORKDIR /app
@@ -19,6 +19,7 @@ RUN \
             https://github.com/gchq/CyberChef/releases/download/${CYBERCHEF_VERSION}/CyberChef_${CYBERCHEF_VERSION}.zip; \
         mkdir build && mkdir build/prod; \
         unzip cyberchef.zip -d build/prod; \
+        mv "build/prod/CyberChef_${CYBERCHEF_VERSION}.html" build/prod/index.html; \
     fi
 
 FROM nginxinc/nginx-unprivileged:1.25.3-alpine-slim
