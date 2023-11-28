@@ -8,4 +8,4 @@ build:
 	docker build --tag ${DOCKER_USERNAME}/${APPLICATION_NAME}-${GIT_HASH} .
 
 run:
-	docker run -p 127.0.0.1:80:8080/tcp ${DOCKER_USERNAME}/${APPLICATION_NAME}-${GIT_HASH}
+	docker run -p 8080:8080/tcp ${DOCKER_USERNAME}/${APPLICATION_NAME}-${GIT_HASH}
